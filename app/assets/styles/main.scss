@@ -1,0 +1,122 @@
+:root {
+  --color-bg: #f4f5f8;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f0f1f5;
+  --color-text: #1c1f26;
+  --color-text-muted: #6b7280;
+  --color-border: #e3e5ea;
+  --color-border-strong: #cbd0d9;
+  --color-primary: #4f6bf6;
+  --color-primary-hover: #3d57e0;
+  --color-danger: #e0453f;
+  --color-danger-hover: #c73832;
+  --color-danger-bg: #fdeceb;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Segoe UI',
+    -apple-system,
+    BlinkMacSystemFont,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1rem;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &--sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  &--primary {
+    background: var(--color-primary);
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: var(--color-primary-hover);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
+
+    &:hover:not(:disabled) {
+      background: var(--color-surface-hover);
+    }
+  }
+
+  &--danger {
+    background: var(--color-danger);
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: var(--color-danger-hover);
+    }
+  }
+
+  &--danger-ghost {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-danger);
+
+    &:hover:not(:disabled) {
+      background: var(--color-danger-bg);
+      border-color: var(--color-danger);
+    }
+  }
+
+  &--icon {
+    padding: 0.5rem;
+  }
+}
